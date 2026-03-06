@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="images/logo_FUSPCEU.png" width="300"/>
+<img src="images/logo_RISE.png" width="300"/>
 <img src="images/logo_with_text-01.png" width="300"/>
 
 <img src="images/logo_banner.png"/>
