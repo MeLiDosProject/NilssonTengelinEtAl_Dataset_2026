@@ -130,16 +130,16 @@ The following files are included with this Dataset:
                      chronotype/
                      continuous/
                          actlumus_wrist/
-                         actlumus_head/
+                         actlumus_head (available for 14/17 participants)
                          actlumus_chest/
                          currentconditions/
                          exercisediary/
-                         experiencelog/
+                         experiencelog (available for 6/17 participants)
                          mHLEA_digital/
-                         mHLEA_paper/
+                         mHLEA_paper (available for 1/17 participants)
                          sleepdiary/
                          wearlog/
-                         wellbeingdiary/
+                         wellbeingdiary (available for 16/17 participants)
                      demographics/
                      discharge/
                      screening/
@@ -157,28 +157,28 @@ This folder contains grouped data, i.e. any data that are collected at the group
 
 | Folder name | Content |
 | --- | --- |
-| **chronotype** | N=2 csv files, one for the Morning Eveningness Questionnaire (MEQ) and one for the Munich Chronotype Questionnaire (MCTQ). Each contains data for N=23 participants. |
-| **demographics** | N=1 csv files. Contains demographic information for N=23 participants. |
-| **discharge** | N=5 csv files, which contains answers from all questionnaires that N=23 participants had to fill at discharge: 1) Light Exposure Behaviour Assessment (LEBA instrument), 2) Visual Light Sensitivity Questionnaire-8 (VLSQ-8), 3) Assessment of Sleep Environment (ASE) questionnaire, 4) Modified Theory Framework of Acceptability (mTFA) questionnaire, 5) Feedback (1 Y/N and multiple choice questions). |
-| **screening** | N=1 csv file for N=23 participants containing screening information. |
+| **chronotype** | N=2 csv files: one for the Morningness-Eveningness Questionnaire (MEQ) and one for the Munich Chronotype Questionnaire (MCTQ). Each contains data for N=17 participants. |
+| **demographics** | N=1 csv file containing demographic information for N=17 participants. |
+| **discharge** | N=1 csv file (`RISE_S001-S017_discharge_all_2025.csv`) with discharge questionnaires for N=17 participants, including LEBA, VLSQ-8, ASE, mTFA, and feedback items. |
+| **screening** | N=1 csv file containing screening information for N=17 participants. |
 
 ## Individual
-This folder contains individual-level data for N=23 participant, each stored in a separate folder named after the participant ID (PID). The data within each participant folder follows the following structure. 
+This folder contains individual-level data for N=17 participants, each stored in a separate folder named after the participant ID (PID). The data within each participant folder follows the structure below, with availability notes where folders are present for a subset of participants. 
 
 | Folder name | Content |
 | --- | -- |
-| **continuous/actlumus_chest** | txt files from ActLumus worn at chest level, one for each participant. Also, a report (`_Report`) from the device. |
-| **continuous/actlumus_head** | txt files from ActLumus worn at eye level, one for each participant. Also, a report (`_Report`) from the device. |
-| **continuous/actlumus_wrist** | txt files from ActLumus worn at the wrist, one for each participant. Also, a report (`_Report`) from the device. |
-| **continuous/currenconditions/** | Questionnaire comprising 3 questionnaires on 1) current mood (MoodZoom), 2) light conditions (custom) and 3) alertness (Karolinska Sleepiness Scale). Completed 4/times per day, at 11:00, 14:00, 17:00 and 20:00. Participants instructed to completed as close as possible to the indicated times. The participant sometimes additionally reported upon waking and before going to bed. |
-| **continuous/exercisediary/** | Custom made questionnaire on exercise. Completed daily in the evening |
-| **continuous/experiencelog/** | Custom made questionnaire about experiences wearing the light glasses. Completed any time participant had an experience to report (no restrictions). |
-| **continuous/mHLEA_digital/** | Custom made questionnaire to test Daily in the evening |  
-| **continuous/mHLEA_paper/** | Custom made paper-based questionnaire to test Daily in the evening. This was transcribed to xlsx files by the experimenter after study end for each participant.  |
-| **continuous/sleepdiary/** | Daily in the morning  | 
-| **continuous/wearlog/** | Any time participant had removed or started wearing the light logger |
-| **continuous/wellbeingdiary/** | Daily in the evening |
-| **chronotype/** | Munich Chronotype Questionnaire (MCTQ) & Morning Eveningness Questionnaire (MEQ) completed at study intake (Monday, day 1) |
-| **demographics/** | Screening questionnaire containing demographic and health information. Completed online before study intake.  |
-| **discharge/** | n=5 csv files with LEBA, VLSQ8, feedback, mTFA, and ASE. Completed at discharge (Monday, day 8).  | 
-| **screening** | N=1 csv file containing screening information. |
+| **continuous/actlumus_chest** | `.txt` files from ActLumus worn at chest level, one recording per participant, plus a corresponding device report file (`*_Report.txt`). |
+| **continuous/actlumus_head** | `.txt` files from ActLumus worn at eye level, plus corresponding report files (`*_Report.txt`). Available for 14/17 participants. |
+| **continuous/actlumus_wrist** | `.txt` files from ActLumus worn at the wrist, plus corresponding report files (`*_Report.txt`) for all 17 participants. |
+| **continuous/currentconditions/** | Questionnaire covering current mood (MoodZoom), light conditions (custom), and alertness (Karolinska Sleepiness Scale), typically completed several times per day. |
+| **continuous/exercisediary/** | Custom exercise questionnaire, typically completed daily in the evening (17/17 participants). |
+| **continuous/experiencelog/** | Custom questionnaire about experiences wearing the light glasses; event-based completion when participants had something to report (6/17 participants). |
+| **continuous/mHLEA_digital/** | Digital custom light-exposure questionnaire completed during the study period (17/17 participants). |
+| **continuous/mHLEA_paper/** | Paper version of the light-exposure questionnaire, transcribed after study end (available for 1/17 participants). |
+| **continuous/sleepdiary/** | Daily morning sleep diary (17/17 participants). |
+| **continuous/wearlog/** | Log completed whenever the light logger was put on or removed (17/17 participants). |
+| **continuous/wellbeingdiary/** | Daily evening wellbeing diary (16/17 participants). |
+| **chronotype/** | Individual MEQ and MCTQ responses completed at study intake. |
+| **demographics/** | Demographic questionnaire completed before study intake. |
+| **discharge/** | N=5 csv files per participant (LEBA, VLSQ-8, feedback, mTFA, ASE), completed at discharge. |
+| **screening** | N=1 csv file per participant containing screening information. |
