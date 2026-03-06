@@ -1,0 +1,3 @@
+﻿record_id,redcap_repeat_instrument,redcap_repeat_instance,redcap_survey_identifier,your_demographics_timestamp,email,email_2,age,sex,gender,native_language,language_specification,employment_status,comments,uuid,startdate,enddate,scheduledate,status,supplementaldata,serializedresult,your_demographics_complete
+RISE_S012,,,RISE_S012,,,,,,,,,,,,,,,,,,
+RISE_S012,your_demographics,1,,"2025-06-09 19:26:10",,,68,1,1,1,,5,"Jag är pensionär",RISE_S012,20250609,20250616,20250609,,,,2

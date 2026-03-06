@@ -1,0 +1,35 @@
+﻿record_id,redcap_repeat_instrument,redcap_repeat_instance,redcap_survey_identifier,your_demographics_timestamp,email,email_2,age,sex,gender,native_language,language_specification,employment_status,comments,uuid,startdate,enddate,scheduledate,status,supplementaldata,serializedresult,your_demographics_complete
+RISE_S001,,,RISE_S001,,,,,,,,,,,,,,,,,,
+RISE_S001,your_demographics,1,,"2025-03-03 16:15:29",,,50,1,1,1,,0,,,,,,,,,2
+RISE_S002,,,RISE_S002,,,,,,,,,,,,,,,,,,
+RISE_S002,your_demographics,1,,"2025-03-17 16:20:06",,,23,2,2,1,,0,,,,,,,,,2
+RISE_S003,,,RISE_S003,,,,,,,,,,,,,,,,,,
+RISE_S003,your_demographics,1,,"2025-03-17 16:33:26",,,21,2,2,0,3,0,,,,,,,,,2
+RISE_S004,,,RISE_S004,,,,,,,,,,,,,,,,,,
+RISE_S004,your_demographics,1,,"2025-03-24 15:20:51",,,38,2,2,1,,0,,,2025-03-24,2025-03-31,,,,,2
+RISE_S005,,,RISE_S005,,,,,,,,,,,,,,,,,,
+RISE_S005,your_demographics,1,,"2025-03-31 13:35:46",,,34,1,1,1,,0,,,,,,,,,2
+RISE_S006,,,RISE_S006,,,,,,,,,,,,,,,,,,
+RISE_S006,your_demographics,1,,"2025-04-14 13:07:15",,,36,2,2,0,3,0,,,,,,,,,2
+RISE_S007,,,RISE_S007,,,,,,,,,,,,,,,,,,
+RISE_S007,your_demographics,1,,"2025-04-14 15:49:21",,,54,2,2,1,,0,,,,,,,,,2
+RISE_S008,,,RISE_S008,,,,,,,,,,,,,,,,,,
+RISE_S008,your_demographics,1,,"2025-10-28 11:03:31",,,64,2,2,1,,0,,,,,,,,,2
+RISE_S009,,,RISE_S009,,,,,,,,,,,,,,,,,,
+RISE_S009,your_demographics,1,,"2025-05-26 17:11:16",,,44,1,1,1,,0,,,,,,,,,2
+RISE_S010,,,RISE_S010,,,,,,,,,,,,,,,,,,
+RISE_S010,your_demographics,1,,"2025-06-05 16:36:36",,,42,2,2,0,2,0,,,,,,,,,2
+RISE_S011,,,RISE_S011,,,,,,,,,,,,,,,,,,
+RISE_S011,your_demographics,1,,"2025-06-09 13:55:29",,,33,2,2,0,1,0,,,,,,,,,2
+RISE_S012,,,RISE_S012,,,,,,,,,,,,,,,,,,
+RISE_S012,your_demographics,1,,"2025-06-09 19:26:10",,,68,1,1,1,,5,"Jag är pensionär",RISE_S012,20250609,20250616,20250609,,,,2
+RISE_S013,,,RISE_S013,,,,,,,,,,,,,,,,,,
+RISE_S013,your_demographics,1,,"2025-06-23 13:40:21",,,40,1,1,1,,0,,,,,,,,,2
+RISE_S014,,,RISE_S014,,,,,,,,,,,,,,,,,,
+RISE_S014,your_demographics,1,,"2025-10-06 14:52:55",,,29,2,2,1,,0,,,,,,,,,2
+RISE_S015,,,RISE_S015,,,,,,,,,,,,,,,,,,
+RISE_S015,your_demographics,1,,"2025-10-06 13:51:40",,,31,2,2,1,,0,,,2025-10-06,2025-10-13,,,,,2
+RISE_S016,,,RISE_S016,,,,,,,,,,,,,,,,,,
+RISE_S016,your_demographics,1,,"2025-10-06 20:48:15",,,27,1,1,1,,0,,,2025-10-06,2025-10-13,,,,,2
+RISE_S017,,,RISE_S017,,,,,,,,,,,,,,,,,,
+RISE_S017,your_demographics,1,,"2025-10-13 15:26:37",,,52,2,2,0,3,0,,,,,,,,,2

@@ -1,0 +1,41 @@
+record_id,redcap_repeat_instrument,redcap_repeat_instance,redcap_survey_identifier,your_lifestyle_and_health_timestamp,medication,medication_type,tobacco,disorder,gen_health,visual_acuity,uuid_2,startdate_2,enddate_2,scheduledate_2,status_2,supplementaldata_2,serializedresult_2,your_lifestyle_and_health_complete
+1,,,Ingemar,,,,,,,,,,,,,,,
+1,your_lifestyle_and_health,1,,"2025-02-20 16:49:21",0,,0,0,2,2,,,,,,,,2
+2,,,Maria,,,,,,,,,,,,,,,
+2,your_lifestyle_and_health,1,,"2025-03-03 15:26:05",0,,0,0,2,2,,,,,,,,2
+RISE_S001,,,RISE_S001,,,,,,,,,,,,,,,
+RISE_S001,your_lifestyle_and_health,1,,"2025-03-03 16:15:55",0,,0,0,2,2,,,,,,,,2
+RISE_S002,,,RISE_S002,,,,,,,,,,,,,,,
+RISE_S002,your_lifestyle_and_health,1,,"2025-03-17 16:20:43",0,,1,0,2,1,,,,,,,,2
+RISE_S003,,,RISE_S003,,,,,,,,,,,,,,,
+RISE_S003,your_lifestyle_and_health,1,,"2025-03-17 16:34:18",1,"Bufomix, astma",0,0,1,1,,,,,,,,2
+RISE_S004,,,RISE_S004,,,,,,,,,,,,,,,
+RISE_S004,your_lifestyle_and_health,1,,"2025-03-24 15:21:22",0,,1,0,1,2,,,,,,,,2
+RISE_S005,,,RISE_S005,,,,,,,,,,,,,,,
+RISE_S005,your_lifestyle_and_health,1,,"2025-03-31 13:36:28",0,,0,0,2,2,,,,,,,,2
+RISE_S006,,,RISE_S006,,,,,,,,,,,,,,,
+RISE_S006,your_lifestyle_and_health,1,,"2025-04-14 13:07:47",0,,0,0,1,1,,,,,,,,2
+RISE_S007,,,RISE_S007,,,,,,,,,,,,,,,
+RISE_S007,your_lifestyle_and_health,1,,"2025-04-14 15:50:04",0,,1,0,1,2,,,,,,,,2
+RISE_S007,your_lifestyle_and_health,2,,"2025-04-28 16:15:07",0,,0,0,2,1,,,,,,,,2
+RISE_S008,,,RISE_S008,,,,,,,,,,,,,,,
+RISE_S008,your_lifestyle_and_health,1,,"2025-10-28 11:04:28",0,,0,0,2,1,,,,,,,,2
+RISE_S009,,,RISE_S009,,,,,,,,,,,,,,,
+RISE_S009,your_lifestyle_and_health,1,,"2025-05-26 17:12:05",0,,0,0,1,2,,,,,,,,2
+RISE_S010,,,RISE_S010,,,,,,,,,,,,,,,
+RISE_S010,your_lifestyle_and_health,1,,"2025-06-05 16:38:05",1,antihistaminer,0,0,1,1,,,,,,,,2
+RISE_S011,,,RISE_S011,,,,,,,,,,,,,,,
+RISE_S011,your_lifestyle_and_health,1,,"2025-06-09 13:56:50",0,,0,0,0,3,,,,,,,,2
+RISE_S011,your_lifestyle_and_health,2,,"2025-06-16 12:49:35",0,,0,0,0,3,,,,,,,,2
+RISE_S012,,,RISE_S012,,,,,,,,,,,,,,,
+RISE_S012,your_lifestyle_and_health,1,,"2025-06-09 19:27:22",1,amlodipin,0,0,0,3,,,,,,,,2
+RISE_S013,,,RISE_S013,,,,,,,,,,,,,,,
+RISE_S013,your_lifestyle_and_health,1,,"2025-06-23 13:40:46",0,,0,0,1,1,,,,,,,,2
+RISE_S014,,,RISE_S014,,,,,,,,,,,,,,,
+RISE_S014,your_lifestyle_and_health,1,,"2025-10-06 14:58:36",1,Propavan,0,0,2,2,,,,,,,,2
+RISE_S015,,,RISE_S015,,,,,,,,,,,,,,,
+RISE_S015,your_lifestyle_and_health,1,,"2025-10-06 13:53:02",1,"ezomeprazol, antihistamin, melatonin",0,0,1,1,,,,,,,,2
+RISE_S016,,,RISE_S016,,,,,,,,,,,,,,,
+RISE_S016,your_lifestyle_and_health,1,,"2025-10-06 20:49:24",0,,0,0,1,1,,,,,,,,2
+RISE_S017,,,RISE_S017,,,,,,,,,,,,,,,
+RISE_S017,your_lifestyle_and_health,1,,"2025-10-13 15:27:28",0,,0,0,2,3,,,,,,,,2

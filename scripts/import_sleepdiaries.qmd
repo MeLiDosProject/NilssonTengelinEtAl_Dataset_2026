@@ -1,0 +1,214 @@
+---
+title: "Import sleep diaries"
+author: "Johannes Zauner"
+format: 
+  html:
+    self-contained: true
+    code-tools: true
+---
+
+## Preface
+
+This document imports the `sleepdiaries` and shows descriptive statistics for the site.
+
+## Setup
+
+```{r}
+#| message: false
+library(tidyverse)
+library(LightLogR)
+library(glue)
+library(readxl)
+library(gt)
+library(gtsummary)
+source("../project_globals.R")
+
+remote <- 
+  "https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/scripts/"
+
+c("labeling",
+  "radio_factors",
+  "time_summaries",
+  "prepare_codebook",
+  "filefinder",
+  "general_parameters",
+  "coltype_checker",
+  "tables"
+) |> walk(\(x) source(paste0(remote, x, ".R")))
+```
+
+## Preparation
+
+```{r}
+#collect codebook
+codebook <- prepare_codebook("MeLiDosMorningSleepDiaries_DataDictionary_2024-10-16.csv")
+#collect files
+files <- filefinder("sleepdiary", continuous = TRUE)
+#import files
+data <- 
+  read_csv(files, show_col_types = FALSE) |> 
+  drop_na(redcap_repeat_instance) |>
+  rename_with(\(x) str_replace(x, "_v2$", ""))
+#check column types
+coltype_check <- coltype_checker(codebook, data)
+coltype_check$details |> gt()
+#collect relevant columns: POSIXct, Date & numeric
+relevant_columns <- 
+  coltype_check$details |> 
+  filter(expected %in% c("POSIXct", "numeric", "Date")) |> 
+  pull(col) |> 
+  setdiff(c("status", "scheduledate"))
+#add specific character columns
+relevant_columns <- c("record_id", relevant_columns, "comments")
+#select relevant columns
+data <- data |> select(any_of(relevant_columns))
+```
+
+### Set sleep time zone
+```{r}
+data <- 
+  data |> 
+  mutate(across(where(is.POSIXct), 
+                \(x) force_tz(x, tzs[[site]]))
+         )
+```
+
+```{r}
+#label variables
+data <-
+data |> 
+  add_radio_factors(codebook, 
+                    var_col = `Variable / Field Name`, 
+                    type_col = `Field Type`,
+                    levels_col = `Choices, Calculations, OR Slider Labels`
+                    ) |> 
+  add_col_labels(codebook, var_col = `Variable / Field Name`, label_col = `Field Label`)
+```
+
+## Calculate sleep and sleepduration
+
+```{r}
+#if sleepdelay is 300 or higher, it is assumed that this person meant seconds instead of minutes
+
+data <- 
+data |> 
+  rename(wake = offset, sleepprep = sleep) |> 
+  mutate(sleepdelay = replace_when(sleepdelay, sleepdelay >= 300 ~ sleepdelay/60),
+         sleep = sleepprep + dminutes(sleepdelay),
+         sleep_duration = wake - sleep
+  )
+
+attr(data$sleep, "label") <- "Sleep onset (calculated)"
+attr(data$sleep_duration, "label") <- "Sleep duration (calculated)"
+```
+
+## Estimate missing sleep entries
+
+```{r}
+avg_sleep <- 
+data |> 
+  summarize(.by = record_id,
+    sleep_duration2 = mean(sleep_duration, na.rm = TRUE)
+  )
+
+data <- 
+data |> 
+  left_join(avg_sleep, by = "record_id") |> 
+  mutate(sleep_duration = replace_values(sleep_duration, NA ~ sleep_duration2),
+         sleep = wake - sleep_duration,
+         sleepprep = sleep - dminutes(sleepdelay)) |> 
+  select(-sleep_duration2)
+
+```
+
+
+## Summarize results
+
+```{r}
+table_sleepdiary(data)
+
+gtsave(table_sleepdiary(data) |> as_gt(), filename = "../output/tables/table_sleepdiary.png", vwidth = 800)
+```
+
+### Translate comments
+
+Native language is translated into English with AI and later checked by a site researcher.
+
+```{r}
+#| label: translate into english with AI
+
+# library(ellmer)
+# 
+# #Providing the relevant codebook portions
+# codebook_red <-
+# codebook|>
+#   pmap(~ paste(paste(names(codebook), c(...), sep = ": "), collapse = ", ")) |>
+#   list_c() |>
+#   paste0(collapse = "newline: ")
+# 
+# chat <- chat_openai(paste0("Copy content and make translations according to specific instructions. They represent answers to questionnaires in a scientific field study."))
+# 
+# #Providing the input
+# data_red <-
+# data|>
+#   select(record_id, comments)
+# data_red <-
+#   data_red |>
+#   pmap(~ paste(paste(names(data_red), c(...), sep = ": "), collapse = ", "))
+# 
+# #creating an output structure
+# type_data <- type_object(
+#   record_id = type_string("use the record_id information"),
+#   comments = type_string("copy the original information here", required = FALSE),
+#   comments_english = type_string("translation of the original information into english", required = FALSE)
+# )
+# 
+# data_llm <-
+# parallel_chat_structured(
+#   chat,
+#   data_red,
+#   type = type_data,
+#   rpm = 500,
+#   max_active = 100
+# )
+# 
+# #Ensure that no NA is caught as string
+# data_llm <-
+#   data_llm |>
+#   mutate(comments = case_when(comments == "NA" ~ NA, .default = comments),
+#          comments_english = case_when(comments_english == "NA" ~ NA, .default = comments_english))
+# 
+# #check that input and output are identical
+# stopifnot("Input must by identical to output check" =
+#             all(data_llm$comments == data$comments, na.rm = TRUE))
+# stopifnot("Input must by identical to output check" =
+#             all(data_llm$record_id == data$record_id, na.rm = TRUE))
+# 
+# data_llm <-
+#   data_llm |>
+#   distinct(record_id, comments, .keep_all = TRUE)
+# 
+# path <- "../data/AI_translations/"
+# if(!dir.exists(path)) dir.create(path, recursive = TRUE)
+# write_csv(data_llm, "../data/AI_translations/sleepdiary.csv")
+
+```
+
+```{r}
+data_llm <- 
+  read_csv("../data/AI_translations/sleepdiary.csv")
+#add output to original
+data <- data |> left_join(data_llm, by = c("record_id", "comments"))
+attr(data$comments_english, "label") <- "Comments (English translation)"
+```
+
+
+### Export
+
+```{r}
+data <- data |> rename(Id = record_id)
+sleepdiary <- data
+path <- "../data/imported/continuous/"
+if(!dir.exists(path)) dir.create(path, recursive = TRUE)
+save(sleepdiary, file = "../data/imported/continuous/sleepdiaries.RData")
+```

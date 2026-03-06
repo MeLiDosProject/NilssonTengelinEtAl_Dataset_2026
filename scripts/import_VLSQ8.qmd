@@ -1,0 +1,114 @@
+---
+title: "Import Light sensitivity VLSQ8"
+author: "Johannes Zauner"
+format: 
+  html:
+    self-contained: true
+    code-tools: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Preface
+
+This document imports the `VLSQ8` (Light sensitivity) and shows descriptive statistics for the site.
+
+## Setup
+
+```{r}
+#| message: false
+library(tidyverse)
+library(LightLogR)
+library(glue)
+library(readxl)
+library(gt)
+library(gtsummary)
+
+remote <- 
+  "https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/scripts/"
+
+c("labeling",
+  "radio_factors",
+  "add_label",
+  "prepare_codebook",
+  "filefinder",
+  "general_parameters",
+  "coltype_checker",
+  "tables"
+) |> walk(\(x) source(paste0(remote, x, ".R")))
+```
+
+## Preparation
+
+```{r}
+#collect codebook
+codebook <- 
+  prepare_codebook("MeLiDosDischargeQuestionnaire_DataDictionary_2024-10-16.csv",
+                   "your_light_sensitivity_vlsq8")
+#collect files
+files <- filefinder("discharge",individual = FALSE)
+
+#import files
+data <- 
+  read_csv(files, show_col_types = FALSE) |> 
+  rename_with(\(x) str_remove_all(x, "_v2")) |> 
+  filter(redcap_repeat_instrument == "your_light_sensitivity_vlsq8")
+#check column types
+coltype_check <- coltype_checker(codebook, data)
+coltype_check$details |> gt()
+#collect relevant columns
+relevant_columns <- 
+  coltype_check$details |> 
+  pull(col) |> 
+  c("record_id")
+#select relevant columns
+data <- data |> select(any_of(relevant_columns))
+#label
+data <-
+data |> 
+  add_radio_factors(codebook, 
+                    var_col = `Variable / Field Name`, 
+                    type_col = `Field Type`,
+                    levels_col = `Choices, Calculations, OR Slider Labels`
+                    ) |> 
+  add_col_labels(codebook, var_col = `Variable / Field Name`, label_col = `Field Label`)
+
+#reorder variables
+data <- 
+  data |> 
+  relocate(record_id, any_of(codebook$`Variable / Field Name`))
+
+data$record_id <- add_label(data$record_id, "Record ID")
+```
+
+## Calculate composit score
+
+```{r}
+data <- 
+data |> 
+  rowwise() |> 
+  mutate(VLSQ8 = sum(c_across(sensitivity:glasses) |> as.numeric())) |> 
+  ungroup() |> 
+  relocate(.after = record_id, VLSQ8)
+data$VLSQ8 <- add_label(data$VLSQ8, "VLSQ-8 sum score (light sensitivity)")
+
+```
+
+## Summarize results
+
+```{r}
+table <- 
+table_general(data, "VSLQ-8: light sensitivity")
+table
+gtsave(table |> as_gt(), filename = "../output/tables/table_vlsq8.png", vwidth = 800)
+```
+
+### Export
+
+```{r}
+data <- data |> rename(Id = record_id)
+vslq8 <- data
+path <- "../data/imported/"
+if(!dir.exists(path)) dir.create(path, recursive = TRUE)
+save(vslq8, file = "../data/imported/vlsq8.RData")
+```
