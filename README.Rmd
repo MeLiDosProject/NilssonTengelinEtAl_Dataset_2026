@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 **Version v1.0.1**
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/xyz.svg)](xyz)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18925834.svg)](https://doi.org/10.5281/zenodo.18925834)
 <!-- badges: end -->
 
 ![Overview of light exposure data. (A) location of data collection. (B) collection periods for participants, (C) photoperiods, and (D) double plot of median, interquartile range (50%), 75%, and 95% ribbons of light exposure across all participants. Shaded areas indicate nighttime from civil dusk to civil dawn.](output/figures/Figure_1.png)
@@ -36,7 +36,7 @@ This repository is transitioning towards a [FAIR](https://www.go-fair.org/fair-p
 
 APA reference:
 
-> Nilsson Tengelin, M., Svensson, I., Källberg, S., Zauner, J., & Spitschan, M. (2026). Personal light exposure dataset for Borås, Sweden (Version 1.0.0) [Data set]. URL: https://github.com/MeLiDosProject/NilssonTengelinEtAl_Dataset_2026. DOI: doi.org/xyz
+> Nilsson Tengelin, M., Svensson, I., Källberg, S., Zauner, J., & Spitschan, M. (2026). Personal light exposure dataset for Borås, Sweden (Version 1.0.0) [Data set]. URL: https://github.com/MeLiDosProject/NilssonTengelinEtAl_Dataset_2026. DOI: doi.org/10.5281/zenodo.18925834
 
 ## Descriptive statistics
 

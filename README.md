@@ -12,7 +12,7 @@
 
 <!-- badges: start -->
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/xyz.svg)](xyz)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18925834.svg)](https://doi.org/10.5281/zenodo.18925834)
 <!-- badges: end -->
 
 <figure>
@@ -58,7 +58,7 @@ APA reference:
 > Spitschan, M. (2026). Personal light exposure dataset for Borås,
 > Sweden (Version 1.0.0) \[Data set\]. URL:
 > <https://github.com/MeLiDosProject/NilssonTengelinEtAl_Dataset_2026>.
-> DOI: doi.org/xyz
+> DOI: doi.org/10.5281/zenodo.18925834
 
 ## Descriptive statistics
 
