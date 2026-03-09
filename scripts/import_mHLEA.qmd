@@ -101,19 +101,20 @@ data_paper <-
 data_paper <-
   data_paper[which(!map_lgl(data_paper, is.null))] |> 
   list_rbind(names_to = "record_id") |> 
-  mutate(start = 
-           round_date(From, unit = "hour") |> 
+  mutate(timestamp = 
+           round_date(timestamp, unit = "hour") |> 
            force_tz(tzs[[site]]),
-         Date = date(start),
-         end = start + dhours(1),
-         .before = From) |> 
-  select(-c(From, To))
+         Date = date(timestamp),
+         start = timestamp,
+         end = timestamp + dhours(1),
+         .before = timestamp) |> 
+  select(-timestamp)
 ```
 
 ## Combine paper diaries with confidence rating
 
 ```{r}
-data <- 
+data <-
 data_paper |> 
   left_join(data, by = c("record_id", "Date")) |> 
   relocate(startdate, .after = last_col())

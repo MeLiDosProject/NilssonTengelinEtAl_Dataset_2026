@@ -6,7 +6,7 @@
 
 <img src="images/logo_banner.png"/>
 
-### Personal light exposure dataset for Stockholm, Sweden; collected by Research Institutes of Sweden (RISE) following the protocol of Guidolin et al. 2024 (MeLiDos field study)
+### Personal light exposure dataset for Borås, Sweden; collected by Research Institutes of Sweden (RISE) following the protocol of Guidolin et al. 2024 (MeLiDos field study)
 
 **Version v1.0.1**
 
@@ -29,8 +29,8 @@ dawn.</figcaption>
 ### About this repository
 
 This repository contains the comprehensive dataset for the
-[MeLiDos](www.melidos.eu) field study site of Stockholm, Sweden. Data
-were collected by [Research Institutes of Sweden
+[MeLiDos](www.melidos.eu) field study site of Borås, Sweden. Data were
+collected by [Research Institutes of Sweden
 (RISE)](https://www.ri.se/en) and are further processed and analysed by
 the [Translational Sensory & Circadian Neuroscience Unit
 (TSCN)](https://www.tscnlab.org). A detailed description of the
@@ -54,8 +54,9 @@ persistent identifier (DOI).
 
 APA reference:
 
-> xyz, Zauner, J., & Spitschan, M. (2026). Personal light exposure
-> dataset for Stockholm, Sweden (Version 1.0.0) \[Data set\]. URL:
+> Nilsson Tengelin, M., Svensson, I., Källberg, S., Zauner, J., &
+> Spitschan, M. (2026). Personal light exposure dataset for Borås,
+> Sweden (Version 1.0.0) \[Data set\]. URL:
 > <https://github.com/MeLiDosProject/NilssonTengelinEtAl_Dataset_2026>.
 > DOI: doi.org/xyz
 
@@ -201,7 +202,7 @@ questionnaire</figcaption>
 | Dataset name | RISE |
 |----|----|
 | Period of data collection (total) | March 2025 to October 2025 |
-| Location | Stockholm, Sweden |
+| Location | Borås, Sweden |
 | Number of participants enrolled | N=17 |
 | Number of participants included in data analysis and this repository | N=17 |
 | Duration of experiment for each participant | N=7 days (Monday to Monday) |
@@ -284,7 +285,7 @@ participants.
 | **continuous/exercisediary/** | Custom exercise questionnaire, typically completed daily in the evening (17/17 participants). |
 | **continuous/experiencelog/** | Custom questionnaire about experiences wearing the light glasses; event-based completion when participants had something to report (6/17 participants). |
 | **continuous/mHLEA_digital/** | Digital custom light-exposure questionnaire completed during the study period (17/17 participants). |
-| **continuous/mHLEA_paper/** | Paper version of the light-exposure questionnaire, transcribed after study end (available for 1/17 participants). |
+| **continuous/mHLEA_paper/** | Paper version of the light-exposure questionnaire, transcribed after study end (available for 17/17 participants). |
 | **continuous/sleepdiary/** | Daily morning sleep diary (17/17 participants). |
 | **continuous/wearlog/** | Log completed whenever the light logger was put on or removed (17/17 participants). |
 | **continuous/wellbeingdiary/** | Daily evening wellbeing diary (16/17 participants). |

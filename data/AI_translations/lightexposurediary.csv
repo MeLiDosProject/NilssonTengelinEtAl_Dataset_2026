@@ -1,0 +1,65 @@
+record_id,start,activity_desc_english,activity_desc
+RISE_S004,2025-03-28T14:00:00Z,Movie theater,Movietheater
+RISE_S004,2025-03-28T15:00:00Z,Movie theater,Movietheater
+RISE_S005,2025-04-01T09:00:00Z,circle,cirkel
+RISE_S005,2025-04-05T08:00:00Z,"Experiment workshop, exhibition","Experimentverkstaden, exhibition"
+RISE_S006,2025-04-20T08:00:00Z,Museum,Museum
+RISE_S006,2025-04-20T10:00:00Z,Restaurant,Restaurant
+RISE_S007,2025-04-16T20:00:00Z,"gym, indoors","gym, indoors"
+RISE_S007,2025-04-18T10:00:00Z,golf outdoors,golf outdoors
+RISE_S007,2025-04-18T11:00:00Z,golf outdoors,golf outdoors
+RISE_S007,2025-04-18T12:00:00Z,golf outdoors,golf outdoors
+RISE_S007,2025-04-18T13:00:00Z,golf outdoors,golf outdoors
+RISE_S007,2025-04-18T14:00:00Z,golf outdoors,golf outdoors
+RISE_S007,2025-04-18T15:00:00Z,golf outdoors,golf outdoors
+RISE_S008,2025-04-29T11:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-29T12:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-29T13:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-29T14:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-30T06:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-30T07:00:00Z,Lab or lecture,Labb eller föreläsning -Lab or lecture
+RISE_S008,2025-04-30T19:00:00Z,Having dinner with friends. The glasses were on the table (not in the bag).,Having dinner with friends. The glasses was on the table (not in the bag)
+RISE_S008,2025-04-30T20:00:00Z,Having dinner with friends. The glasses were on the table (not in the bag).,Having dinner with friends. The glasses was on the table (not in the bag)
+RISE_S011,2025-06-09T15:00:00Z,sports,idrott
+RISE_S011,2025-06-09T16:00:00Z,sports,idrott
+RISE_S011,2025-06-09T17:00:00Z,sports,idrott
+RISE_S011,2025-06-10T15:00:00Z,exercise/sports,idrott
+RISE_S011,2025-06-10T16:00:00Z,sports,idrott
+RISE_S011,2025-06-10T17:00:00Z,sports,idrott
+RISE_S011,2025-06-11T15:00:00Z,sports,idrott
+RISE_S011,2025-06-11T16:00:00Z,sports,idrott
+RISE_S011,2025-06-11T17:00:00Z,physical exercise,idrott
+RISE_S011,2025-06-12T15:00:00Z,sports,idrott
+RISE_S011,2025-06-12T16:00:00Z,sports,idrott
+RISE_S011,2025-06-12T17:00:00Z,sports,idrott
+RISE_S011,2025-06-12T18:00:00Z,sports,idrott
+RISE_S011,2025-06-13T15:00:00Z,sports,idrott
+RISE_S011,2025-06-13T16:00:00Z,sports,idrott
+RISE_S011,2025-06-13T17:00:00Z,sports,idrott
+RISE_S011,2025-06-13T18:00:00Z,sports,idrott
+RISE_S011,2025-06-15T08:00:00Z,church,kyrka - church
+RISE_S011,2025-06-15T09:00:00Z,church,kyrka - church
+RISE_S011,2025-06-15T10:00:00Z,church,kyrka - church
+RISE_S013,2025-06-25T14:00:00Z,Sauna and swimming in lake.,Sauna and swimming in lake.
+RISE_S013,2025-06-25T15:00:00Z,Sauna and swimming in lake.,Sauna and swimming in lake.
+RISE_S013,2025-06-27T14:00:00Z,shopping and restaurant,shopping+restaurant
+RISE_S013,2025-06-27T15:00:00Z,shopping and restaurant,shopping+restaurant
+RISE_S013,2025-06-28T13:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T14:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T15:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T16:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T17:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T18:00:00Z,birthday party,birthday party
+RISE_S013,2025-06-28T19:00:00Z,birthday party,birthday party
+RISE_S014,2025-10-08T18:00:00Z,gym indoors,gym indoors
+RISE_S014,2025-10-10T18:00:00Z,gym indoors,gym indoors
+RISE_S014,2025-10-12T11:00:00Z,gym indoors,gym indoors
+RISE_S015,2025-10-09T16:00:00Z,swimming,swimming
+RISE_S015,2025-10-11T07:00:00Z,shopping,shopping
+RISE_S015,2025-10-11T08:00:00Z,shopping,shopping
+RISE_S015,2025-10-11T09:00:00Z,shopping,shopping
+RISE_S015,2025-10-11T10:00:00Z,shopping,shopping
+RISE_S016,2025-10-09T16:00:00Z,exercise outdoors,idrott utomhus (exercise outdoors)
+RISE_S016,2025-10-11T08:00:00Z,Shopping and errands,handlade och ärenden (shopping and errands)
+RISE_S016,2025-10-11T09:00:00Z,Shopping and errands,handlade och ärenden (shopping and errands)
+RISE_S016,2025-10-11T10:00:00Z,shopping and errands,handlade och ärenden (shopping and errands)
