@@ -52,6 +52,7 @@ files <- filefinder("mHLEA_digital", continuous = TRUE, individual = TRUE)
 data <- 
   read_csv(files, show_col_types = FALSE) |> 
   drop_na(redcap_repeat_instance) |> 
+  filter(str_detect(record_id, "RISE")) |> 
   rename_with(\(x) str_remove(x, "_v2$")) #check column types
 coltype_check <- coltype_checker(codebook, data)
 coltype_check$details |> gt()
