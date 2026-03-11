@@ -46,7 +46,7 @@ APA reference:
 
 ### Light
 
-![Summary table of personal light exposure (eye-level data)](output/tables/table_summary.png)
+![Summary table of personal light exposure (chest-level data)](output/tables/table_summary.png)
 
 ### Sleep
 
