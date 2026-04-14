@@ -98,8 +98,6 @@ data |>
          sleep_duration = wake - sleep
   )
 
-attr(data$sleep, "label") <- "Sleep onset (calculated)"
-attr(data$sleep_duration, "label") <- "Sleep duration (calculated)"
 ```
 
 ## Estimate missing sleep entries
@@ -118,6 +116,9 @@ data |>
          sleep = wake - sleep_duration,
          sleepprep = sleep - dminutes(sleepdelay)) |> 
   select(-sleep_duration2)
+
+attr(data$sleep, "label") <- "Sleep onset (calculated)"
+attr(data$sleep_duration, "label") <- "Sleep duration (calculated)"
 
 ```
 
