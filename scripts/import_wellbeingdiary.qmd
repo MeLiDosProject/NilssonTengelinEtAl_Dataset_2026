@@ -61,6 +61,33 @@ relevant_columns <-
   pull(col)
 #select relevant columns
 data <- data |> select(any_of(relevant_columns))
+```
+
+## Only RISE - recoding who questions
+
+RISE incorrectly coded the REDcap questions for who5. The following code cell corrects for that:
+
+```{r}
+data <- 
+data |> 
+  mutate(
+    across(starts_with("who5_1998_"),
+           \(x) replace_values(
+             x,
+             1 ~ 5,
+             2 ~ 4,
+             4 ~ 2,
+             5 ~ 1,
+             # 55 ~ 5,
+             # 44 ~ 4
+           )
+           )
+  )
+```
+
+## Continue as normal:
+
+```{r}
 #label variables
 data <-
 data |> 
