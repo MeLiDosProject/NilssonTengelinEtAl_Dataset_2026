@@ -37,7 +37,7 @@ RISE_S012,NA,NA
 RISE_S012,Högintensiv intervallträning,High-intensity interval training
 RISE_S012,rask promenad/jogging,brisk walk/jogging
 RISE_S012,promenad,walk
-RISE_S012,Radk promenad,Rake walk
+RISE_S012,Rask promenad,Brisk walk
 RISE_S012,Rörlighetsträning . Rask promenad,Mobility training. Brisk walk
 RISE_S013,Rask promenad,Brisk walk
 RISE_S013,NA,NA
@@ -53,7 +53,7 @@ RISE_S014,styrketräning gym 60min,strength training gym 60min
 RISE_S015,inget. gick runt i staden.,nothing. walked around the city.
 RISE_S015,simmning,swimming
 RISE_S015,NA,NA
-RISE_S016,Motionssimning,Leisure swimming
+RISE_S016,Motionssimning,Lap swimming
 RISE_S016,NA,NA
 RISE_S017,"cyckling till från jobbet, kvällspromenad","cycling to and from work, evening walk"
 RISE_S017,promenad,walk
