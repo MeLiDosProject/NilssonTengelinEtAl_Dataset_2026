@@ -24,8 +24,9 @@ library(readxl)
 library(gt)
 library(gtsummary)
 
-remote <- 
-  "https://raw.githubusercontent.com/MeLiDosProject/Data_Metadata_Conventions/main/scripts/"
+metadata_root <- Sys.getenv("MELIDOS_METADATA_ROOT", unset = "../metadata")
+stopifnot(dir.exists(file.path(metadata_root, "scripts")))
+remote <- paste0(normalizePath(file.path(metadata_root, "scripts")), "/")
 
 c("labeling",
   "radio_factors",  
@@ -56,6 +57,38 @@ data <-
   mutate(across(medication:disorder, as.logical),
          medication_type = as.character(medication_type),
          drugs = na_lgl)
+```
+
+### Resolve repeated assessments and unmatched IDs
+
+The approved selection retains the second assessments for RISE_S007
+(28 April 2025) and RISE_S011 (16 June 2025). Literal IDs `1` and `2` are
+excluded from the export without assigning them to another participant.
+Raw submissions remain unchanged; excluded assessment keys are recorded.
+
+```{r}
+assessment_choices <- tribble(
+  ~record_id, ~redcap_repeat_instance, ~keep,
+  "RISE_S007", 1, FALSE,
+  "RISE_S007", 2, TRUE,
+  "RISE_S011", 1, FALSE,
+  "RISE_S011", 2, TRUE,
+  "1", 1, FALSE,
+  "2", 1, FALSE
+)
+selected_assessments <- data |>
+  inner_join(assessment_choices, by = c("record_id", "redcap_repeat_instance"),
+             relationship = "one-to-one")
+stopifnot(nrow(selected_assessments) == nrow(assessment_choices))
+excluded_assessments <- assessment_choices |> filter(!keep) |> select(-keep)
+dir.create("../output/data_quality", recursive = TRUE, showWarnings = FALSE)
+write_csv(excluded_assessments, "../output/data_quality/health_excluded_assessments.csv")
+data <- data |>
+  anti_join(excluded_assessments, by = c("record_id", "redcap_repeat_instance"))
+stopifnot(!anyDuplicated(data$record_id), !any(data$record_id %in% c("1", "2")))
+```
+
+```{r}
 #check column types
 coltype_check <- coltype_checker(codebook, data)
 coltype_check$details |> gt()
@@ -83,6 +116,7 @@ data <-
 ## Summarize results
 
 ```{r}
+#| purl: false
 table_health(data)
 
 gtsave(table_health(data) |> as_gt(), filename = "../output/tables/table_health.png", vwidth = 800)

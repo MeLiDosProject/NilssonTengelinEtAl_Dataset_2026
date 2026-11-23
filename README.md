@@ -8,7 +8,7 @@
 
 ### Personal light exposure dataset for Borås, Sweden; collected by Research Institutes of Sweden (RISE) following the protocol of Guidolin et al. 2024 (MeLiDos field study)
 
-**Version v1.0.1**
+**Version v1.2.0**
 
 <!-- badges: start -->
 
@@ -56,9 +56,19 @@ APA reference:
 
 > Nilsson Tengelin, M., Svensson, I., Källberg, S., Zauner, J., &
 > Spitschan, M. (2026). Personal light exposure dataset for Borås,
-> Sweden (Version 1.0.0) \[Data set\]. URL:
+> Sweden (Version 1.2.0) \[Data set\]. URL:
 > <https://github.com/MeLiDosProject/NilssonTengelinEtAl_Dataset_2026>.
 > DOI: doi.org/10.5281/zenodo.18925834
+
+### Reproducing the corrected exports
+
+The current exports are in `data/imported/`; their source importers are
+in `scripts/import_*.qmd`. See [CHANGELOG.md](CHANGELOG.md) for the
+changes in this release and [REPRODUCING.md](REPRODUCING.md) for
+execution and verification. The release includes a fixed copy of its
+metadata helpers and codebooks in `metadata/`. Raw source records remain
+available for traceability. Superseded importers and generated HTML
+reports are available in Git history.
 
 ## Descriptive statistics
 

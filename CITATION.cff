@@ -40,9 +40,6 @@ authors:
     orcid: 'https://orcid.org/0000-0002-8572-9268'
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.18954381
-    description: Zenodo archive (V1.0.0)
-  - type: doi
     value: 10.5281/zenodo.18925834
     description: Zenodo Archive (latest version)
 repository-code: >-
@@ -64,5 +61,5 @@ keywords:
   - melanopic
   - naturalistic setting
 license: CC-BY-4.0
-version: 1.0.0
-date-released: '2026-03-09'
+version: 1.2.0
+date-released: '2026-11-23'
